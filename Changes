@@ -1,5 +1,10 @@
 Revision history for Perl extension Formatter::HTML::HTML.
 
-0.93_1 2005-01-28 
+0.94	2005-02-01
+	- Second release. Does really work! Thanks to Ben Trott for
+	pointing out that the clean method actually returns the
+	cleaned string, not just OK. 
+
+0.93_1 	2005-01-28 
 	- Initial release. Doesn't really work...
 

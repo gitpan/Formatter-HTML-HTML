@@ -9,7 +9,7 @@ use HTML::TokeParser;
 use base qw( HTML::Tidy );
 
 
-our $VERSION = '0.93_1';
+our $VERSION = '0.94';
 
 =head1 NAME
 
@@ -40,7 +40,7 @@ This module conforms with the L<Formatter> API specification, version 0.93:
 =item C<format($string)>
 
 The format function that you call to initialise the formatter. It
-takes the plain text as a string argument and returns a an object of
+takes the plain text as a string argument and returns an object of
 this class.
 
 =cut
@@ -49,11 +49,10 @@ sub format {
   my $that  = shift;
   my $class = ref($that) || $that;
   my $text = shift;
-  my $tidy = new HTML::Tidy;
-  $tidy->parse("Formatter::HTML::HTML", $text);
-  $tidy->clean($text) || die "HTML::Tidy could not produce sensible output";
+  my $tidy = new HTML::Tidy;       # In fact, we let it do the hard work
+  my $clean = $tidy->clean($text); # allready. It has to be done anyway.
   my $self = {
-	      _out => $text,
+	      _out => $clean,
 	     };
   bless($self, $class);
   return $self;

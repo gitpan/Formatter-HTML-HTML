@@ -1,5 +1,5 @@
-Formatter-HTML-HTML version 0.93_1
-==================================
+Formatter-HTML-HTML version 0.94
+================================
 
 This module conforms to the Formatter API Specification, version
 0.93. The specification itself can be found in the Formatter module on
@@ -10,14 +10,6 @@ various sources. To do this, it lets HTML::Tidy do the
 work. HTML::Tidy again, lets libtidy do the hard work. libtidy is the
 HTML clean-up code Dave Raggett at W3C started. Pretty hefty stuff! 
 
-Unfortunately, I can't get HTML::Tidy to work... :-( The present
-release is pretty much how I think the module should be, but it
-doesn't work. It is uploaded to CPAN in the hope that somebody spots
-the bug. In fact, if you can make test it, let me know, it means that
-it works for you. For me, it fails tests 3 and 4 in 02insert.
-If you grok the HTML::Tidy code, I would be very pleased if you give
-me a hand! :-)
-
 INSTALLATION
 
 To install this module use the cpan or cpanplus tools or type the
@@ -27,6 +19,14 @@ following:
    make
    make test
    make install
+
+TODO
+
+One test currently depends on having the same version of tidy as the
+developer. That is due to tidy inserting a version string and stuff as
+a meta element in the document code, and I'm not aware of any way to
+turn it off. This test is marked as TODO, but you shouldn't be
+surprised to see it report that it unexpectedly succeeded.
 
 DEPENDENCIES
 
