@@ -1,0 +1,9 @@
+Changes
+lib/Formatter/HTML/HTML.pm
+Makefile.PL
+MANIFEST
+MANIFEST.SKIP
+META.yml			Module meta-data (added by MakeMaker)
+README
+t/01use.t
+t/02insert.t
