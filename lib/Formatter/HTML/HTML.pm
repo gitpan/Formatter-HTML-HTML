@@ -9,7 +9,7 @@ use HTML::TokeParser;
 use base qw( HTML::Tidy );
 
 
-our $VERSION = '0.94';
+our $VERSION = '0.95';
 
 =head1 NAME
 

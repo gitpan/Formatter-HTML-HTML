@@ -1,5 +1,10 @@
 Revision history for Perl extension Formatter::HTML::HTML.
 
+0.95	2005-03-10
+	- Test depend on specific versions of stuff. That is bad, but
+	  I think I'll just mark them TODO for now.
+	- Added SIGNATURE.
+
 0.94	2005-02-01
 	- Second release. Does really work! Thanks to Ben Trott for
 	pointing out that the clean method actually returns the

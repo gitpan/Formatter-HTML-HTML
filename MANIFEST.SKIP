@@ -7,4 +7,5 @@
 tar.gz$
 .bak$
 .tmp$
+.old$
 t/03escaping.t
