@@ -35,7 +35,7 @@ my $docexpected = <<'_EOD_';
 "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta name="generator" content="HTML Tidy for Linux/x86 (vers 1st August 2004), see www.w3.org">
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 12 April 2005), see www.w3.org">
 <title>Tidy Formatter test</title>
 </head>
 <body lang="en">
@@ -49,10 +49,7 @@ _EOD_
 my $text = Formatter::HTML::HTML->format($data);
 isa_ok( $text, 'Formatter::HTML::HTML' );
 
-TODO: {
-  local $TODO = "This currently depends on HTML::Tidy 1.05_01";
-  ok($text->fragment eq $fragexpected, 'Fragment comes out as expected');
-}
+ok($text->fragment eq $fragexpected, 'Fragment comes out as expected');
 
 TODO: {
   local $TODO = "This currently depends on having the same version of tidy as the developer";

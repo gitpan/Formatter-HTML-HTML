@@ -1,4 +1,4 @@
-Formatter-HTML-HTML version 0.94
+Formatter-HTML-HTML version 0.95
 ================================
 
 This module conforms to the Formatter API Specification, version
@@ -30,8 +30,15 @@ surprised to see it report that it unexpectedly succeeded.
 
 DEPENDENCIES
 
-This module depends on HTML::Tidy and HTML::Parser to do its hard
-work.
+This module depends on HTML::Tidy, v 1.06, and HTML::Parser to do its
+hard work.
+
+SUBVERSION REPOSITORY 
+
+This module is currently maintained in a Subversion repository. The
+trunk can be checked out anonymously using e.g.:
+
+  svn checkout http://svn.kjernsmo.net/Formatter-HTML-HTML/trunk Formatter-HTML-HTML
 
 COPYRIGHT AND LICENCE
 

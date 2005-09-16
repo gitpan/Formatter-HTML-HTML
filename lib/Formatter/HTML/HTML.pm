@@ -9,7 +9,7 @@ use HTML::TokeParser;
 use base qw( HTML::Tidy );
 
 
-our $VERSION = '0.95';
+our $VERSION = '0.96';
 
 =head1 NAME
 
@@ -33,24 +33,29 @@ L<HTML::TokeParser>).
 
 =head1 METHODS
 
-This module conforms with the L<Formatter> API specification, version 0.93:
+This module conforms with the L<Formatter> API specification, version 0.95:
 
 =over
 
-=item C<format($string)>
+=item C<format($string [, {config_file =E<gt> 'path/to/tidy.cfg'} )>
 
 The format function that you call to initialise the formatter. It
 takes the plain text as a string argument and returns an object of
 this class.
 
+Optionally, you may give a hashref with the full file name of the tidy
+config. This enables you to have this Formatter return valid XHTML,
+just set it correctly in the config. Note also that you may break the
+Formatter by e.g. returning configuring tidy to return just a
+fragment, and it is your own resonsibility to make sure you don't.
+
 =cut
 
 sub format {
-  my $that  = shift;
+  my ($that, $text, $config)  = @_;
   my $class = ref($that) || $that;
-  my $text = shift;
-  my $tidy = new HTML::Tidy;       # In fact, we let it do the hard work
-  my $clean = $tidy->clean($text); # allready. It has to be done anyway.
+  my $tidy = new HTML::Tidy($config); # In fact, we let it do the hard work
+  my $clean = $tidy->clean($text);    # allready. It has to be done anyway.
   my $self = {
 	      _out => $clean,
 	     };
@@ -89,15 +94,18 @@ This will return only the contents of the C<body> element.
 
 sub fragment {
   my $self = shift;
-  $self->{_out} =~ m|<body.*?>(.*)</body>|si;
-  return $1;
+  if ($self->{_out} =~ m|<body.*?>(.*)</body>|si) {
+    return $1;
+  } else {
+    return $self->{_out}
+  }
 }
 
 =item C<links>
 
 Will return all links found the input plain text string as an
-arrayref. The arrayref will for each element contain a key C<uri> with
-the address and C<title> with the link text.
+arrayref. The arrayref will for each element keys url and title, the
+former containing the URL, the latter the text of the link.
 
 
 =cut
@@ -153,6 +161,13 @@ Both the C<fragment> and C<document> methods use naive regular
 expressions to strip off elements and add a C<meta> element
 respectively. This is clearly not very reliable, and should be done
 with a proper parser.
+
+=head1 SUBVERSION REPOSITORY
+
+This module is currently maintained in a Subversion repository. The
+trunk can be checked out anonymously using e.g.:
+
+  svn checkout http://svn.kjernsmo.net/Formatter-HTML-HTML/trunk Formatter-HTML-HTML
 
 =head1 AUTHOR
 

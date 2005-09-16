@@ -6,7 +6,7 @@ WriteMakefile(
     NAME              => 'Formatter::HTML::HTML',
     VERSION_FROM      => 'lib/Formatter/HTML/HTML.pm', # finds $VERSION
     PREREQ_PM         => {
-			  HTML::Tidy => 0,
+			  HTML::Tidy => 1.06,
 			  HTML::TokeParser => 0,
 			 }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
