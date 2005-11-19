@@ -63,11 +63,11 @@ ok(my $links = $text->links, 'Assigning links');
 my $expectedlinks = [
 		     {
 		      'title' => 'CPAN',
-		      'uri' => 'http://search.cpan.org/dist/Formatter-HTML-HTML/'
+		      'url' => 'http://search.cpan.org/dist/Formatter-HTML-HTML/'
 		     },
 		     {
 		      'title' => 'Kjetil Kjernsmo',
-		      'uri' => 'http://www.kjetil.kjernsmo.net/'
+		      'url' => 'http://www.kjetil.kjernsmo.net/'
 		     }];
 
 ok(eq_array($expectedlinks, $links), 'All links and titles match');

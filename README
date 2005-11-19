@@ -1,8 +1,8 @@
-Formatter-HTML-HTML version 0.95
+Formatter-HTML-HTML version 0.97
 ================================
 
 This module conforms to the Formatter API Specification, version
-0.93. The specification itself can be found in the Formatter module on
+0.95. The specification itself can be found in the Formatter module on
 CPAN. 
 
 This Formatter is intended to be used to clean up existing HTML from

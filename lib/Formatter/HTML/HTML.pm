@@ -9,7 +9,7 @@ use HTML::TokeParser;
 use base qw( HTML::Tidy );
 
 
-our $VERSION = '0.96';
+our $VERSION = '0.97';
 
 =head1 NAME
 
@@ -22,7 +22,7 @@ Formatter::HTML::HTML - Formatter to clean existing HTML
   print $formatter->document;
   print $formatter->title;
   my $links = $text->links;
-  print ${$links}[0]->{uri};
+  print ${$links}[0]->{url};
 
 =head1 DESCRIPTION
 
@@ -118,7 +118,7 @@ sub links {
   while (my $token = $p->get_tag("a")) {
     my $url = $token->[1]{href} || "-";
     my $text = $p->get_trimmed_text("/a");
-    push(@arr, {uri => $url, title => $text});
+    push(@arr, {url => $url, title => $text});
   }
   return \@arr;
 }

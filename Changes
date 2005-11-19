@@ -1,5 +1,9 @@
 Revision history for Perl extension Formatter::HTML::HTML.
 
+0.97	2005-11-19
+        - Fixed a spec violation (duh!) bug, I had used uri instead of
+	url.
+	
 0.96	2005-09-16
 	- Added an config_file hashref parameter, useful for enabling
 	users to configure tidy, adding the possibility of XHTML output.

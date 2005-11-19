@@ -1,12 +1,12 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.38.
+signed via the Module::Signature module, version 0.44.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
 
     % cpansign -v
 
-It would check each file's integrity, as well as the signature's
+It will check each file's integrity, as well as the signature's
 validity.  If "==> Signature verified OK! <==" is not displayed,
 the distribution may already have been compromised, and you should
 not run its Makefile.PL or Build.PL.
@@ -14,19 +14,19 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 35cbb98663179eae777b0cf99b3a332b85a4f96e Changes
+SHA1 685310daa32a16d9bd8c376e997e4112cee7dafa Changes
 SHA1 52dd296a8f6b28057cd98bc03aaa66f08356aafe MANIFEST
 SHA1 0520ee62e2a0f0e17b733daf25e4b73bcaeec185 MANIFEST.SKIP
-SHA1 39a61e8c6d6351afe8d02d82e02cd507cdeb4aa6 META.yml
+SHA1 21bc9dbfd98b0cd3a375442475dac17300d17cdd META.yml
 SHA1 b58ba28e84764f30fbf8657e17a8810c340cc3ae Makefile.PL
-SHA1 844210fe152c8d04d0b86a129c70a4e0d4fff28d README
-SHA1 e811e852e0891321f59b174ad358d15b03e715e6 lib/Formatter/HTML/HTML.pm
+SHA1 3b52f87f88a7c366676c9d4584f95e91323cdddf README
+SHA1 5c9d41cf23636242244aefd3ad5c9bb78eebf5ee lib/Formatter/HTML/HTML.pm
 SHA1 89156bc5f9e2809ad3b18e16d82b257afb024124 t/01use.t
-SHA1 3705af17c04127e9780e648638cefea1ef92bde1 t/02insert.t
+SHA1 bd3405672656d7970547a9c616c090c3f2803765 t/02insert.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.1 (GNU/Linux)
 
-iD8DBQFDKx8flE/Gp2pqC7wRApM3AKCUl6sAqnkKvbaxv8LkVq7qHQ8aYgCfXB+J
-MeatZ/mmqbg5ETi6zjftmRA=
-=GvHT
+iD8DBQFDf6gmlE/Gp2pqC7wRAmWTAJ9SYljqJ298d0UV54XSPGcFtf/TBACcD9Lo
+Rho8ZVfvIBFMNGKoJ985BTY=
+=CTT6
 -----END PGP SIGNATURE-----
